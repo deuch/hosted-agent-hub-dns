@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Local parameter files (may contain environment-specific values)
+infra/main.bicepparam
+*.local.bicepparam
+
+# azd local state
+.azure/

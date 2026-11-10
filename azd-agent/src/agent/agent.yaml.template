@@ -1,0 +1,9 @@
+# Template: deploy.ps1 replaces __AGENT_NAME__ and __AGENT_IMAGE__ and writes agent.yaml.
+name: __AGENT_NAME__
+template:
+    description: Hosted container agent using pre-built image __AGENT_IMAGE__
+    kind: hosted
+    name: __AGENT_NAME__
+    protocols:
+        - protocol: responses
+          version: 2.0.0
