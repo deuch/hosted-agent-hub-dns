@@ -11,6 +11,10 @@ rg-ai    vnet-ai  (10.2.0.0/16)   Foundry (network-injected agent subnet), ACR +
 
 All VNets are peered to the hub, use the Private DNS Resolver as DNS server, and send `0.0.0.0/0` to the firewall. Resource group names are parameters.
 
+![Architecture: network, application flows and DNS flow](docs/architecture.svg)
+
+The diagram is [docs/architecture.excalidraw](docs/architecture.excalidraw) (editable in Excalidraw, also exported as [SVG](docs/architecture.svg) and [PNG](docs/architecture.png)). It shows the application flows (numbered), the DNS flow (D1 to D4) and the egress through the firewall (E1, E2).
+
 | Folder | Content |
 |---|---|
 | [infra](infra) | Bicep for the network, Foundry account and project (with capability hosts), ACR, VM and Bastion. See [infra/README.md](infra/README.md) |

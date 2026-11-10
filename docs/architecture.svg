@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2280" height="1730" viewBox="0 0 2280 1730"><rect width="100%" height="100%" fill="#FFFFFF"/><text font-family="Helvetica, Arial, sans-serif" font-size="30" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="40.0" y="49.4">Microsoft Foundry hosted agents in a hub-and-spoke network</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="15" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="40.0" y="78.7">Prebuilt agent image in a private ACR · Azure Firewall with minimal rules · Private DNS Resolver as DNS server of every VNet</tspan></text>
+<polyline points="1560,38 1610,38" fill="none" stroke="#0078D4" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1610,38 1597.0,44.0 1597.0,32.0" fill="#0078D4"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1622.0" y="41.7">Application / data flow</tspan></text>
+<polyline points="1900,38 1950,38" fill="none" stroke="#5C2D91" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="10 6"/>
+<polygon points="1950,38 1937.0,44.0 1937.0,32.0" fill="#5C2D91"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1962.0" y="41.7">DNS flow</tspan></text>
+<polyline points="1560,74 1610,74" fill="none" stroke="#F7630C" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1610,74 1597.0,80.0 1597.0,68.0" fill="#F7630C"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1622.0" y="77.7">Egress through the firewall</tspan></text>
+<polyline points="1900,74 1950,74" fill="none" stroke="#495057" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1950,74 1937.0,80.0 1937.0,68.0" fill="#495057"/>
+<polygon points="1900,74 1913.0,68.0 1913.0,80.0" fill="#495057"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1962.0" y="77.7">VNet peering</tspan></text>
+<rect x="40" y="120" width="300" height="1090" rx="10" ry="10" fill="none" stroke="#605E5C" stroke-width="2" stroke-dasharray="9 6"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="54.0" y="144.7">Outside the VNets</tspan></text>
+<rect x="60" y="170" width="260" height="110" rx="10" ry="10" fill="#F3F2F1" stroke="#605E5C" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="190.0" y="213.4">Rest of the Internet</tspan><tspan x="190.0" y="229.6">not reachable from the VNets</tspan><tspan x="190.0" y="245.9">(denied by the firewall)</tspan></text>
+<rect x="60" y="375" width="260" height="150" rx="10" ry="10" fill="#F3F2F1" stroke="#605E5C" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="190.0" y="430.2">Microsoft Entra ID</tspan><tspan x="190.0" y="446.5">login.microsoftonline.com</tspan><tspan x="190.0" y="462.7">&lt;region&gt;.login.microsoft.com</tspan><tspan x="190.0" y="479.0">*.identity.azure.net</tspan></text>
+<rect x="60" y="545" width="260" height="140" rx="10" ry="10" fill="#F3F2F1" stroke="#605E5C" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="190.0" y="595.2">Operator workstation</tspan><tspan x="190.0" y="611.5">(public IP on the ACR allow list)</tspan><tspan x="190.0" y="627.7">azd deploy.ps1 · Python SDK</tspan><tspan x="190.0" y="644.0">az acr build</tspan></text>
+<rect x="60" y="1040" width="260" height="110" rx="10" ry="10" fill="#F3F2F1" stroke="#605E5C" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="190.0" y="1091.5">Azure portal</tspan><tspan x="190.0" y="1107.7">Developer Bastion session</tspan></text>
+<rect x="420" y="120" width="680" height="430" rx="10" ry="10" fill="none" stroke="#F7630C" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="434.0" y="144.7">rg-hub · vnet-hub 10.0.0.0/16</tspan></text>
+<rect x="440" y="165" width="640" height="365" rx="10" ry="10" fill="none" stroke="#F7630C" stroke-width="1.5"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="454.0" y="186.7">AzureFirewallSubnet 10.0.0.0/26</tspan></text>
+<rect x="460" y="205" width="600" height="150" rx="10" ry="10" fill="#FFF4CE" stroke="#F7630C" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="474.0" y="226.8">Azure Firewall policy: only these rules, everything else is denied</tspan><tspan x="474.0" y="241.8">NETWORK  UDP/TCP 53  vnet-ai (10.2.0.0/16) → 10.1.0.4 (DNS Resolver)</tspan><tspan x="474.0" y="256.8">NETWORK  TCP 443  agent subnet → AzureActiveDirectory service tag</tspan><tspan x="474.0" y="271.8">NETWORK  TCP 1688  VM subnet → Windows KMS (activation)</tspan><tspan x="474.0" y="286.8">APPLICATION  HTTPS 443  agent subnet → control-&lt;region&gt;.identity.azure.net,</tspan><tspan x="474.0" y="301.8">    *.identity.azure.net, &lt;region&gt;.login.microsoft.com, *.login.microsoft.com,</tspan><tspan x="474.0" y="316.8">    login.microsoftonline.com, *.login.microsoftonline.com</tspan></text>
+<rect x="470" y="395" width="200" height="110" rx="10" ry="10" fill="#FFF4CE" stroke="#F7630C" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="570.0" y="438.4">Public IP (Standard)</tspan><tspan x="570.0" y="454.6">SNAT for outbound</tspan><tspan x="570.0" y="470.9">traffic to the Internet</tspan></text>
+<rect x="720" y="395" width="330" height="110" rx="10" ry="10" fill="#FFF4CE" stroke="#F7630C" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="885.0" y="437.5">Azure Firewall Standard (afw-hub)</tspan><tspan x="885.0" y="455.0">private IP 10.0.0.4</tspan><tspan x="885.0" y="472.5">next hop (UDR) of all spokes</tspan></text>
+<rect x="1180" y="120" width="1040" height="430" rx="10" ry="10" fill="none" stroke="#5C2D91" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1194.0" y="144.7">rg-dns · vnet-dns 10.1.0.0/16 · DNS server = 10.1.0.4</tspan></text>
+<rect x="1200" y="165" width="440" height="365" rx="10" ry="10" fill="none" stroke="#5C2D91" stroke-width="1.5"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1214.0" y="186.7">snet-dns-inbound 10.1.0.0/28</tspan><tspan x="1214.0" y="203.0">delegated to Microsoft.Network/dnsResolvers</tspan></text>
+<rect x="1220" y="225" width="400" height="80" rx="10" ry="10" fill="#E8DAEF" stroke="#5C2D91" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="1420.0" y="261.5">UDR rt-dns: 0.0.0.0/0 → 10.0.0.4</tspan><tspan x="1420.0" y="277.7">replies to vnet-ai go back through the firewall</tspan></text>
+<rect x="1220" y="395" width="400" height="110" rx="10" ry="10" fill="#E8DAEF" stroke="#5C2D91" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="1420.0" y="437.5">Private DNS Resolver (dnspr-hub)</tspan><tspan x="1420.0" y="455.0">Inbound endpoint 10.1.0.4</tspan><tspan x="1420.0" y="472.5">custom DNS server of hub, dns and ai VNets</tspan></text>
+<rect x="1690" y="185" width="510" height="170" rx="10" ry="10" fill="#E8DAEF" stroke="#5C2D91" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="1945.0" y="234.0">Private DNS zones (linked to vnet-dns only)</tspan><tspan x="1945.0" y="250.2">privatelink.cognitiveservices.azure.com</tspan><tspan x="1945.0" y="266.5">privatelink.openai.azure.com</tspan><tspan x="1945.0" y="282.7">privatelink.services.ai.azure.com</tspan><tspan x="1945.0" y="299.0">privatelink.azurecr.io</tspan><tspan x="1945.0" y="315.2">A records created by the private endpoint zone groups</tspan></text>
+<rect x="1690" y="395" width="510" height="110" rx="10" ry="10" fill="#E8DAEF" stroke="#5C2D91" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="1945.0" y="437.5">Azure-provided DNS 168.63.129.16</tspan><tspan x="1945.0" y="455.0">answers from the linked private zones</tspan><tspan x="1945.0" y="472.5">recursion for public names</tspan></text>
+<rect x="420" y="640" width="1800" height="715" rx="10" ry="10" fill="none" stroke="#0078D4" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="434.0" y="664.7">rg-ai</tspan></text>
+<rect x="440" y="685" width="1130" height="645" rx="10" ry="10" fill="none" stroke="#0078D4" stroke-width="1.5"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="454.0" y="707.7">vnet-ai 10.2.0.0/16 · DNS server 10.1.0.4</tspan></text>
+<rect x="470" y="730" width="500" height="230" rx="10" ry="10" fill="none" stroke="#0078D4" stroke-width="1.5"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="484.0" y="751.7">snet-agent 10.2.1.0/24</tspan><tspan x="484.0" y="768.0">delegated to Microsoft.App/environments</tspan></text>
+<rect x="500" y="790" width="440" height="100" rx="10" ry="10" fill="#CFE4FA" stroke="#0078D4" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="720.0" y="836.2">Hosted agent runtime (network-injected)</tspan><tspan x="720.0" y="853.7">simple-agent container (Responses protocol)</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="500.0" y="916.8">UDR rt-ai: 0.0.0.0/0 → 10.0.0.4 (firewall)</tspan></text>
+<rect x="1000" y="730" width="540" height="230" rx="10" ry="10" fill="none" stroke="#0078D4" stroke-width="1.5"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1014.0" y="751.7">snet-pe 10.2.0.0/28 · no UDR</tspan></text>
+<rect x="1020" y="770" width="500" height="80" rx="10" ry="10" fill="#CFE4FA" stroke="#0078D4" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="1270.0" y="806.2">Private endpoint: Foundry account</tspan><tspan x="1270.0" y="823.7">10.2.0.6 · 10.2.0.7 · 10.2.0.8</tspan></text>
+<rect x="1020" y="865" width="500" height="80" rx="10" ry="10" fill="#CFE4FA" stroke="#0078D4" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="1270.0" y="901.2">Private endpoint: ACR (registry + data)</tspan><tspan x="1270.0" y="918.7">10.2.0.4 · 10.2.0.5</tspan></text>
+<rect x="470" y="990" width="500" height="220" rx="10" ry="10" fill="none" stroke="#0078D4" stroke-width="1.5"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="484.0" y="1011.7">AzureBastionSubnet 10.2.3.0/26</tspan></text>
+<rect x="500" y="1050" width="440" height="100" rx="10" ry="10" fill="#CFE4FA" stroke="#0078D4" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="720.0" y="1096.2">Azure Bastion, Developer SKU</tspan><tspan x="720.0" y="1113.7">RDP from the Azure portal to vm-test</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="500.0" y="1176.8">The Developer SKU uses a shared pool,</tspan><tspan x="500.0" y="1191.8">the subnet is only reserved</tspan></text>
+<rect x="1000" y="990" width="540" height="220" rx="10" ry="10" fill="none" stroke="#0078D4" stroke-width="1.5"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1014.0" y="1011.7">snet-vm 10.2.2.0/28</tspan></text>
+<rect x="1020" y="1050" width="500" height="100" rx="10" ry="10" fill="#CFE4FA" stroke="#0078D4" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="1270.0" y="1096.2">vm-test: Windows 11 (test client)</tspan><tspan x="1270.0" y="1113.7">system-assigned identity · DNS 10.1.0.4</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1020.0" y="1176.8">UDR rt-ai: 0.0.0.0/0 → 10.0.0.4 (firewall)</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="470.0" y="1251.8">VNet peering vnet-ai ↔ vnet-hub (forwarded traffic allowed).</tspan><tspan x="470.0" y="1266.8">Traffic to the private endpoints stays inside the VNet and does not go through the firewall.</tspan></text>
+<rect x="1640" y="685" width="560" height="645" rx="10" ry="10" fill="none" stroke="#107C10" stroke-width="2" stroke-dasharray="9 6"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1654.0" y="707.7">Azure PaaS services (rg-ai), outside the VNet</tspan></text>
+<rect x="1660" y="725" width="520" height="345" rx="10" ry="10" fill="none" stroke="#107C10" stroke-width="1.5"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1674.0" y="746.7">Microsoft Foundry account · public network access Enabled</tspan><tspan x="1674.0" y="763.0">network injection → snet-agent</tspan></text>
+<rect x="1680" y="775" width="480" height="80" rx="10" ry="10" fill="#DFF6DD" stroke="#107C10" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="1920.0" y="811.5">Project &#x27;default&#x27; + capability hosts (Agents)</tspan><tspan x="1920.0" y="827.7">account host (platform) · project host</tspan></text>
+<rect x="1680" y="870" width="480" height="60" rx="10" ry="10" fill="#DFF6DD" stroke="#107C10" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="1920.0" y="904.6">Model deployment (for example gpt-4.1-mini)</tspan></text>
+<rect x="1680" y="945" width="480" height="100" rx="10" ry="10" fill="#DFF6DD" stroke="#107C10" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="1920.0" y="983.4">Hosted agent versions (simple-agent)</tspan><tspan x="1920.0" y="999.6">container image from the private ACR</tspan><tspan x="1920.0" y="1015.9">project managed identity → AcrPull</tspan></text>
+<rect x="1660" y="1110" width="520" height="170" rx="10" ry="10" fill="none" stroke="#107C10" stroke-width="1.5"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1674.0" y="1131.7">Azure Container Registry (Premium)</tspan></text>
+<rect x="1680" y="1150" width="480" height="110" rx="10" ry="10" fill="#DFF6DD" stroke="#107C10" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1694.0" y="1171.8">Image agents/simple-agent:&lt;tag&gt; (built with ACR Tasks)</tspan><tspan x="1694.0" y="1186.8">Public access: only the allowed IPs, disabled when the list is empty</tspan><tspan x="1694.0" y="1201.8">Private endpoint + privatelink.azurecr.io</tspan><tspan x="1694.0" y="1216.8">AcrPull for the Foundry project identity</tspan></text>
+<polyline points="1100,250 1180,250" fill="none" stroke="#495057" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="1180,250 1167.0,256.0 1167.0,244.0" fill="#495057"/>
+<polygon points="1100,250 1113.0,244.0 1113.0,256.0" fill="#495057"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1103.0" y="238.8">peering</tspan></text>
+<polyline points="1075,550 1075,685" fill="none" stroke="#495057" stroke-width="2" stroke-linejoin="round"/>
+<polygon points="1075,685 1069.0,672.0 1081.0,672.0" fill="#495057"/>
+<polygon points="1075,550 1081.0,563.0 1069.0,563.0" fill="#495057"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="11" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1085.0" y="662.8">VNet peering</tspan></text>
+<polyline points="320,585 2240,585 2240,1210 2182,1210" fill="none" stroke="#0078D4" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="2182,1210 2195.0,1204.0 2195.0,1216.0" fill="#0078D4"/>
+<polyline points="320,615 2110,615 2110,723" fill="none" stroke="#0078D4" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="2110,723 2104.0,710.0 2116.0,710.0" fill="#0078D4"/>
+<polyline points="320,1100 500,1100" fill="none" stroke="#0078D4" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="500,1100 487.0,1106.0 487.0,1094.0" fill="#0078D4"/>
+<polyline points="940,1100 1020,1100" fill="none" stroke="#0078D4" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1020,1100 1007.0,1106.0 1007.0,1094.0" fill="#0078D4"/>
+<polyline points="1270,1050 1270,962" fill="none" stroke="#0078D4" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1270,962 1276.0,975.0 1264.0,975.0" fill="#0078D4"/>
+<polyline points="940,880 1020,880" fill="none" stroke="#0078D4" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1020,880 1007.0,886.0 1007.0,874.0" fill="#0078D4"/>
+<polyline points="940,810 1020,810" fill="none" stroke="#0078D4" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1020,810 1007.0,816.0 1007.0,804.0" fill="#0078D4"/>
+<polyline points="1520,810 1660,810" fill="none" stroke="#0078D4" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1660,810 1647.0,816.0 1647.0,804.0" fill="#0078D4"/>
+<polyline points="1520,905 1600,905 1600,1200 1660,1200" fill="none" stroke="#0078D4" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="1660,1200 1647.0,1206.0 1647.0,1194.0" fill="#0078D4"/>
+<polyline points="855,790 855,507" fill="none" stroke="#5C2D91" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="10 6"/>
+<polygon points="855,507 861.0,520.0 849.0,520.0" fill="#5C2D91"/>
+<polyline points="1050,450 1220,450" fill="none" stroke="#5C2D91" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="10 6"/>
+<polygon points="1220,450 1207.0,456.0 1207.0,444.0" fill="#5C2D91"/>
+<polyline points="1620,450 1690,450" fill="none" stroke="#5C2D91" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="10 6"/>
+<polygon points="1690,450 1677.0,456.0 1677.0,444.0" fill="#5C2D91"/>
+<polyline points="1945,395 1945,357" fill="none" stroke="#5C2D91" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="10 6"/>
+<polygon points="1945,357 1951.0,370.0 1939.0,370.0" fill="#5C2D91"/>
+<polyline points="915,790 915,507" fill="none" stroke="#F7630C" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="915,507 921.0,520.0 909.0,520.0" fill="#F7630C"/>
+<polyline points="720,450 672,450" fill="none" stroke="#F7630C" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="672,450 685.0,444.0 685.0,456.0" fill="#F7630C"/>
+<polyline points="470,450 322,450" fill="none" stroke="#F7630C" stroke-width="2.5" stroke-linejoin="round"/>
+<polygon points="322,450 335.0,444.0 335.0,456.0" fill="#F7630C"/>
+<circle cx="760" cy="615" r="14.0" fill="#FFFFFF" stroke="#0078D4" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="760.0" y="619.3">1</tspan></text>
+<circle cx="640" cy="585" r="14.0" fill="#FFFFFF" stroke="#0078D4" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="640.0" y="589.3">2</tspan></text>
+<circle cx="400" cy="1100" r="14.0" fill="#FFFFFF" stroke="#0078D4" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="400.0" y="1104.3">3</tspan></text>
+<circle cx="980" cy="1100" r="14.0" fill="#FFFFFF" stroke="#0078D4" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="980.0" y="1104.3">4</tspan></text>
+<circle cx="1270" cy="1006" r="14.0" fill="#FFFFFF" stroke="#0078D4" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="1270.0" y="1010.3">5</tspan></text>
+<circle cx="980" cy="880" r="14.0" fill="#FFFFFF" stroke="#0078D4" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="980.0" y="884.3">6</tspan></text>
+<circle cx="980" cy="810" r="14.0" fill="#FFFFFF" stroke="#0078D4" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="980.0" y="814.3">7</tspan></text>
+<circle cx="1590" cy="810" r="14.0" fill="#FFFFFF" stroke="#0078D4" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="1590.0" y="814.3">8</tspan></text>
+<circle cx="1600" cy="1050" r="14.0" fill="#FFFFFF" stroke="#0078D4" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="1600.0" y="1054.3">8</tspan></text>
+<circle cx="855" cy="768" r="14.0" fill="#FFFFFF" stroke="#5C2D91" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="855.0" y="772.3">D1</tspan></text>
+<circle cx="1135" cy="450" r="14.0" fill="#FFFFFF" stroke="#5C2D91" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="1135.0" y="454.3">D2</tspan></text>
+<circle cx="1655" cy="450" r="14.0" fill="#FFFFFF" stroke="#5C2D91" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="1655.0" y="454.3">D3</tspan></text>
+<circle cx="1945" cy="376" r="14.0" fill="#FFFFFF" stroke="#5C2D91" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="1945.0" y="380.3">D4</tspan></text>
+<circle cx="915" cy="768" r="14.0" fill="#FFFFFF" stroke="#F7630C" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="915.0" y="772.3">E1</tspan></text>
+<circle cx="395" cy="450" r="14.0" fill="#FFFFFF" stroke="#F7630C" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#000000" text-anchor="middle" style="white-space:pre"><tspan x="395.0" y="454.3">E2</tspan></text>
+<rect x="40" y="1400" width="2180" height="300" rx="10" ry="10" fill="none" stroke="#605E5C" stroke-width="2"/>
+<text font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="54.0" y="1424.7">Flows</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="60.0" y="1451.7">Application flows</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="60.0" y="1478.7">1</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="102.0" y="1478.7">Deploy: azd / Python SDK (Entra ID auth, HTTPS 443) → Foundry public endpoint →</tspan><tspan x="102.0" y="1495.0">new hosted agent version that points to the ACR image.</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="60.0" y="1517.2">2</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="102.0" y="1517.2">Image: az acr build / docker push → ACR public endpoint, only from the allowed IPs</tspan><tspan x="102.0" y="1533.5">(ACR Tasks runners need a temporary rule, no IP = no public access).</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="60.0" y="1555.7">3, 4</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="102.0" y="1555.7">Test: Azure portal → Developer Bastion → RDP to vm-test (no public IP on the VM).</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="60.0" y="1578.0">5</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="102.0" y="1578.0">vm-test resolves the Foundry / ACR names to private IPs and calls the private</tspan><tspan x="102.0" y="1594.2">endpoints inside vnet-ai (system routes, not through the firewall).</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="60.0" y="1616.5">6</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="102.0" y="1616.5">Agent start: the platform pulls the image from ACR through the ACR private</tspan><tspan x="102.0" y="1632.7">endpoint (AcrPull on the project identity).</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="60.0" y="1655.0">7</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="102.0" y="1655.0">The agent calls the Foundry project and the model through the Foundry private endpoint.</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="60.0" y="1677.2">8</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="102.0" y="1677.2">Private Link connection from each private endpoint to its PaaS service.</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="780.0" y="1451.7">DNS flow (dashed purple)</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="780.0" y="1478.7">D1</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="822.0" y="1478.7">A client in snet-agent or snet-vm uses 10.1.0.4 as DNS server. vnet-dns is not</tspan><tspan x="822.0" y="1495.0">peered with vnet-ai, so the UDR sends the query to the firewall (rule: port 53).</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="780.0" y="1517.2">D2</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="822.0" y="1517.2">The firewall forwards it over the hub ↔ dns peering to the Private DNS Resolver</tspan><tspan x="822.0" y="1533.5">inbound endpoint. The reply returns through the firewall (UDR rt-dns).</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="780.0" y="1555.7">D3</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="822.0" y="1555.7">The resolver forwards the query to Azure-provided DNS 168.63.129.16 of vnet-dns.</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="780.0" y="1578.0">D4</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="822.0" y="1578.0">Azure DNS answers from the private zones linked to vnet-dns: Foundry and ACR names</tspan><tspan x="822.0" y="1594.2">return the private endpoint IPs (10.2.0.x). Public names are resolved recursively.</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="780.0" y="1620.5">All private zones live in rg-dns and are linked only to vnet-dns. The hub, dns and</tspan><tspan x="780.0" y="1636.7">ai VNets use the resolver as custom DNS server.</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1500.0" y="1451.7">Egress, identity and RBAC</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1500.0" y="1478.7">E1</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1542.0" y="1478.7">Agent subnet traffic leaves through the UDR next hop: the firewall.</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1500.0" y="1501.0">E2</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1542.0" y="1501.0">The firewall only allows AzureActiveDirectory:443 and the identity / login FQDNs,</tspan><tspan x="1542.0" y="1517.2">and SNATs through its public IP to Microsoft Entra ID (managed identity tokens).</tspan><tspan x="1542.0" y="1533.5">Every other Internet destination is denied.</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="14" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1500.0" y="1566.7">RBAC</tspan></text>
+<text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#000000" text-anchor="start" style="white-space:pre"><tspan x="1500.0" y="1587.7">Foundry project identity: Foundry User on the account, AcrPull on the ACR</tspan><tspan x="1500.0" y="1604.0">vm-test identity: Foundry User on the account, AcrPull on the ACR</tspan><tspan x="1500.0" y="1620.2">Admin user (optional): Foundry User and Foundry Agent Consumer on the account;</tspan><tspan x="1500.0" y="1636.5">AcrPush, AcrPull and Container Registry Tasks Contributor on the ACR</tspan></text></svg>
